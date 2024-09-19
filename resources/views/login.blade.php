@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
+
 </head>
 
 <body>
-    <div class="login-page">
+    @livewireScripts
+    <div class="container">
         <!-- cria um form -->
-        <div class="form">
+        <div class="form_container">
+            <h1>Login</h1>
             <!-- form submetido via POST para a rota de login -->
             <form method="POST" action="{{route('login')}}">
-                <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
-                @csrf
-                <!-- cria u  input do tipo text e o placeholder deixa uma mensagem temporanea -->
-                <input type="text" placeholder="username" />
-                <!-- o tipo password garante que o texto digitado seja ocultado -->
-                <input type="password" placeholder="password" />
-                <a href="/dashboard"> <input type="button" value="vambora"></a>
-                <p class="message">Not registred? <a href="/">Cria uma conta ae mano</a></p>
+                <div class="insite_container">
+                    <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
+                    @csrf
+                    <!-- cria u  input do tipo text e o placeholder deixa uma mensagem temporanea -->
+                    <input type="text" placeholder="username" />
+                    <!-- o tipo password garante que o texto digitado seja ocultado -->
+                    <input type="password" placeholder="password" />
+                    <a href="/dashboard"> <input type="button" value="vambora"></a>
+                    <p class="message">Not registred? <a href="/">Cria uma conta ae mano</a></p>
+                </div>
             </form>
         </div>
     </div>

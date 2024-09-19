@@ -5,13 +5,14 @@
 namespace App\Http\Controllers;
 //Importa a classe Request do Laravel, que é usada para lidar com requisições HTTP, como dados de formulário ou parâmetros de URL.
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class AuthController extends Controller
 { //Define o controlador AuthController, que herda da classe base Controller do Laravel. Essa herança fornece vários métodos úteis para controle de fluxo.
 
     public function showRegisterForm()
     {
-        // Retorna a view de registro
+
         return view('register');
     }
     public function showLoginForm()
@@ -24,5 +25,24 @@ class AuthController extends Controller
     {
         // Retorna a view de dashboard
         return view('dashboard');
+    }
+
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'required|max:255'
+        ]);
+
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ]);
+
+        return redirect('/dashboard')->with('sucess', 'Usuário registrado com sucesso!');
+
     }
 }

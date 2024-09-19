@@ -13,26 +13,30 @@
 
 <body>
     @livewireScripts
-    <div class="register-page">
-        <!-- cria um form -->
-        <div class="container">
-            <div class="form_container">
-                <!-- form submetido via POST para a rota de registro -->
-                <form method="POST" action="{{route('register')}}">
 
-                    <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
-                    @csrf
-                    <!-- cria u  input do tipo text e o placeholder deixa uma mensagem temporanea -->
-                    <input type="text" placeholder="name" />
-                    <!-- o tipo password garante que o texto digitado seja ocultado -->
-                    <input type="password" placeholder="password" />
-                    <input type="email" placeholder="email address" />
-                    <button>create</button>
-                    <p class="message">Already registered? <a href="/login">Sign In</a></p>
-                </form>
-            </div>
+    <!-- cria um form -->
+    <div class="container">
+        <div class="form_container">
+            <!-- form submetido via POST para a rota de registro -->
+            <h1>REGISTER</h1>
+            <form method="POST" action="{{route('register')}}">
+                <div class="insite_container">
+                <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
+                @csrf
+    
+                <!-- cria u  input do tipo text e o placeholder deixa uma mensagem temporanea -->
+                <input type="text" name="name" placeholder="name" />
+                <!-- o tipo password garante que o texto digitado seja ocultado -->
+                <input type="email" name="email" placeholder="email address" />
+                <input type="password" name="password" placeholder="password" />
+                
+                <button type="submit" class="botao">create</button>
+                <p class="message">Already registered? <a href="{{ url ('/login')}}">Sign In</a></p>
+                </div>
+            </form>
         </div>
     </div>
+
 </body>
 
 </html>

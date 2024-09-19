@@ -6,6 +6,8 @@
     <title>Dashboard</title>
 </head>
 <body>
+<h1>Bem-vindo, {{ Auth::user()->name }}!</h1>
+
     <h1>fala galerinhaf</h1>
 </body>
 </html>
