@@ -3,16 +3,10 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', showRegisterForm(){
-    return view('register');
-    
-});
+Route::get('/', [AuthController::class, 'showRegisterForm'])->name('register');
 
-Route::get('/login', showLoginForm() {
-    
-    return view('login');
-});
 
-Route::get('/dashboard', showDashboard() {
-    return view('dashboard');
-});
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+
+Route::get('/dashboard', [AuthController::class, 'showDashboard'])->name('dashboard');
+

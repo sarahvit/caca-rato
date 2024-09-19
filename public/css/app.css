@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background: #76b852;
+
+    background: rgb(141, 194, 111);
+    background: linear-gradient(90deg, rgba(141, 194, 111, 1) 0%, rgba(118, 184, 82, 1) 50%);
+    font-family: "Roboto", sans-serif;
+
+}
+
+div {
+    padding: 10px;
+}
+
+
+.form_container {
+
+    background-color: aliceblue;
+    width: 500px;
+    padding: 15px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 3px 3px 10px 0 #00000063;
+}

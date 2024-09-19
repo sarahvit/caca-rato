@@ -1,6 +1,6 @@
 <?php
 
-// app/Http/Controllers/AuthController.php
+//use app/Http/Controllers/AuthController.php
 
 namespace App\Http\Controllers;
 //Importa a classe Request do Laravel, que é usada para lidar com requisições HTTP, como dados de formulário ou parâmetros de URL.
