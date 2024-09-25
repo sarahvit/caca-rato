@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'showRegisterForm'])->name('register');
 
+Route::get('/dashboard', [AuthController::class, 'showDashboard'])->name('dashboard');
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
-Route::get('/dashboard', [AuthController::class, 'showDashboard'])->middleware('auth')->name('dashboard');
 
+//rota para processar os dodos do formulário
+Route::post('/users', [AuthController::class, 'store'])->name('users.store');
+//Route::post('/login', [AuthController::class, 'login'])->name('login.submit');  
 
-Route::post('/', [AuthController::class, 'store'])->name('users.store');

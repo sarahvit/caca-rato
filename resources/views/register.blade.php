@@ -19,8 +19,8 @@
         <div class="form_container">
             <!-- form submetido via POST para a rota de registro -->
             <h1>REGISTER</h1>
-            <form method="POST" action="{{route('register')}}">
-                <div class="insite_container">
+            <form method="POST" action="{{route('users.store')}}">
+                <div class="inside_container">
                 <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
                 @csrf
     
@@ -30,10 +30,13 @@
                 <input type="email" name="email" placeholder="email address" />
                 <input type="password" name="password" placeholder="password" />
                 
-                <button type="submit" class="botao">create</button>
-                <p class="message">Already registered? <a href="{{ url ('/login')}}">Sign In</a></p>
+                <button type="submit" class="botao"><a  href="{{url('/dashboard')}}">create</a></button>
+        
                 </div>
+                <p class="message">Already registered? <a href="{{ url ('/login')}}">Sign In</a></p>   
+                
             </form>
+    
         </div>
     </div>
 

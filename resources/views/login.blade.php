@@ -18,17 +18,18 @@
         <div class="form_container">
             <h1>Login</h1>
             <!-- form submetido via POST para a rota de login -->
-            <form method="POST" action="{{route('login')}}">
-                <div class="insite_container">
+            <form method="POST" action="{{route('dashboard')}}">
+                <div class="inside_container">
                     <!-- Este é um helper do Laravel Blade que insere um token CSRF (Cross-Site Request Forgery) em formulários para garantir que as requisições POST sejam seguras. -->
                     @csrf
                     <!-- cria u  input do tipo text e o placeholder deixa uma mensagem temporanea -->
                     <input type="text" placeholder="username" />
                     <!-- o tipo password garante que o texto digitado seja ocultado -->
                     <input type="password" placeholder="password" />
-                    <a href="/dashboard"> <input type="button" value="vambora"></a>
-                    <p class="message">Not registred? <a href="/">Cria uma conta ae mano</a></p>
+                    <button type="submit" class="botao"><a href="/dashboard">create</a></button>
+                    
                 </div>
+                <p class="message">Not registred? <a href="/">Cria uma conta ae mano</a></p>
             </form>
         </div>
     </div>

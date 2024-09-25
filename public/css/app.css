@@ -37,7 +37,7 @@ h1{
     margin-bottom: 20px;
     font-size: 2rem;
 }
-.insite_container{
+.inside_container{
     flex-direction: column;
 }
 input[type=text],
@@ -69,6 +69,6 @@ button{
     color: #858585;
 }
 a{
-    color: #052920;
+    color: #052910;
     text-decoration: none;
 }

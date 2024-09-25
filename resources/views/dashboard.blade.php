@@ -6,8 +6,12 @@
     <title>Dashboard</title>
 </head>
 <body>
-<h1>Bem-vindo, {{ Auth::user()->name }}!</h1>
 
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
     <h1>fala galerinhaf</h1>
 </body>
 </html>
